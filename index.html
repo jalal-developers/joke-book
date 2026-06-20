@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Joke Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1>Jokify.</h1>
+            <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="joke-card">
+            <div id="loader" class="loader hidden"></div>
+            <div id="jokeContainer" class="joke-content">
+                <p id="setup" class="setup">Ready for a laugh?</p>
+                <p id="punchline" class="punchline">Click the button below!</p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="getJokeBtn" class="primary-btn">
+                <i class="fas fa-random"></i> Generate Joke
+            </button>
+            <button id="saveJokeBtn" class="icon-btn outline hidden" aria-label="Save Joke">
+                <i class="far fa-heart"></i>
+            </button>
+        </div>
+
+        <div class="favorites-section">
+            <h2>Saved Jokes</h2>
+            <ul id="favoritesList" class="favorites-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --text-main: #2d3748;
+    --text-muted: #4a5568;
+    --btn-primary: #4299e1;
+    --btn-hover: #3182ce;
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+[data-theme="dark"] {
+    --bg-gradient: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    --glass-bg: rgba(0, 0, 0, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f7fafc;
+    --text-muted: #e2e8f0;
+    --btn-primary: #63b3ed;
+    --btn-hover: #4299e1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-main);
+}
+
+.glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: var(--card-shadow);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.joke-card {
+    background: var(--glass-bg);
+    border-radius: 15px;
+    padding: 30px 20px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid var(--glass-border);
+    position: relative;
+}
+
+.setup {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.punchline {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+    background: var(--btn-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.primary-btn:hover {
+    background: var(--btn-hover);
+}
+
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+.icon-btn.outline {
+    border: 2px solid var(--glass-border);
+    border-radius: 10px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-btn.outline.saved {
+    color: #e53e3e;
+    border-color: #e53e3e;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.loader {
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top: 3px solid var(--btn-primary);
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.favorites-section {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 20px;
+}
+
+.favorites-section h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.favorites-list {
+    list-style: none;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.favorites-list li {
+    background: var(--glass-bg);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--glass-border);
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #fc8181;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.delete-btn:hover {
+    color: #e53e3e;
+}
+
+/* Custom Scrollbar for favorites list */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 10px; }
